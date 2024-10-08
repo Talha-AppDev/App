@@ -18,6 +18,8 @@ class act_menu : AppCompatActivity() {
 
         binding = ActMenuBinding.inflate(layoutInflater)
 
+        binding.navigationBar.selectedItemId = R.id.NB_menu
+
         binding.menuBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -48,6 +50,10 @@ class act_menu : AppCompatActivity() {
                 R.id.NB_profile -> {
                     val intent = Intent(this, act_profile::class.java)
                     startActivity(intent)
+                }
+                R.id.home ->
+                {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

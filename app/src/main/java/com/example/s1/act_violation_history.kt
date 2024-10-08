@@ -17,6 +17,7 @@ class act_violation_history : AppCompatActivity() {
 
         binding = ActViolationHistoryBinding.inflate(layoutInflater)
 
+
         //to main activity
         binding.voilationHistoryBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -39,6 +40,10 @@ class act_violation_history : AppCompatActivity() {
                 R.id.NB_menu -> {
                     val intent = Intent(this, act_menu::class.java)
                     startActivity(intent)
+                }
+                //to main activity
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

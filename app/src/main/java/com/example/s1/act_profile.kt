@@ -17,22 +17,26 @@ class act_profile : AppCompatActivity() {
 
         binding = ActProfileBinding.inflate(layoutInflater)
 
+        binding.navigationBar.selectedItemId = R.id.NB_profile
+
         //to top btn to main
         binding.profBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
-        //to notification & menu
         binding.navigationBar.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                //to notification
                 R.id.NB_notification -> {
-                    val intent = Intent(this, act_notifications::class.java)
-                    startActivity(intent)
+                    startActivity( Intent(this, act_notifications::class.java))
                 }
+                //to menu
                 R.id.NB_menu -> {
-                    val intent = Intent(this, act_menu::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_menu::class.java))
+                }
+                //to home
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

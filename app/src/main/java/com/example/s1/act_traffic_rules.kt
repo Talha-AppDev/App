@@ -36,6 +36,10 @@ class act_traffic_rules : AppCompatActivity() {
                         val intent = Intent(this, act_menu::class.java)
                         startActivity(intent)
                     }
+                    R.id.home ->
+                    {
+                        startActivity(Intent(this, MainActivity::class.java))
+                    }
                 }
                 true
             }

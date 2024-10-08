@@ -19,25 +19,26 @@ class act_license_reg : AppCompatActivity() {
 
         //to top btn to main
         binding.licRegBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
-        //to notification, profile & menu
-        binding.navigationBar.setOnItemSelectedListener {
-            menuItem ->
+        binding.navigationBar.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.NB_notification -> {
-                    val intent = Intent(this, act_notifications::class.java)
-                    startActivity(intent)
+                    startActivity( Intent(this, act_notifications::class.java))
                 }
+                //to profile
                 R.id.NB_profile -> {
-                    val intent = Intent(this, act_profile::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_profile::class.java))
                 }
+                //to menu
                 R.id.NB_menu -> {
                     val intent = Intent(this, act_menu::class.java)
                     startActivity(intent)
+                }
+                //to home
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

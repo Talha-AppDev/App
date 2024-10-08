@@ -24,12 +24,14 @@ class act_feedback : AppCompatActivity() {
         binding.navigationBar.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.NB_notification -> {
-                    val intent = Intent(this, act_notifications::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_notifications::class.java))
                 }
                 R.id.NB_profile -> {
-                    val intent = Intent(this, act_profile::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_profile::class.java))
+                }
+                //to home activity
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

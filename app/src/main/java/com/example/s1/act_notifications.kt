@@ -13,7 +13,10 @@ class act_notifications : AppCompatActivity() {
 
         binding = ActNotificationsBinding.inflate(layoutInflater)
 
-        //to top btn to main
+        binding.navigationBar.selectedItemId = R.id.NB_notification
+
+
+            //to top btn to main
         binding.notificationBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -22,13 +25,19 @@ class act_notifications : AppCompatActivity() {
         //from NB notification and profile and menu
         binding.navigationBar.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                //to notification activity
                 R.id.NB_profile -> {
                     val intent = Intent(this, act_profile::class.java)
                     startActivity(intent)
                 }
+                //to menu activity
                 R.id.NB_menu -> {
                     val intent = Intent(this, act_menu::class.java)
                     startActivity(intent)
+                }
+                //to notification activity
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

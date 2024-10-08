@@ -17,24 +17,26 @@ class act_lic_center : AppCompatActivity() {
 
         //to top btn to main
         binding.licenseCenterBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         //to notification, profile & menu
         binding.navigationBar.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.NB_notification -> {
-                    val intent = Intent(this, act_notifications::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_notifications::class.java))
                 }
+                //to profile activity
                 R.id.NB_profile -> {
-                    val intent = Intent(this, act_profile::class.java)
-                    startActivity(intent)
+                    startActivity( Intent(this, act_profile::class.java))
                 }
+                //to menu activity
                 R.id.NB_menu -> {
-                    val intent = Intent(this, act_menu::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_menu::class.java))
+                }
+                //to home activity
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true

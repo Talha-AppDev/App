@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActMainBinding.inflate(layoutInflater)
 
+        binding.navigationBar.selectedItemId = R.id.home
+
         //to challan payment
         binding.challanPay.setOnClickListener {
             val intent = Intent(this, act_challan_payment::class.java)

@@ -26,18 +26,19 @@ class act_reg_vehicle : AppCompatActivity() {
             when (menuItem.itemId) {
                 //to notification activity
                 R.id.NB_notification -> {
-                    val intent = Intent(this, act_notifications::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_notifications::class.java))
                 }
                 //to profile activity
                 R.id.NB_profile -> {
-                    val intent = Intent(this, act_profile::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, act_profile::class.java))
+                }
+                //to menu activity
+                R.id.NB_menu -> {
+                    startActivity( Intent(this, act_menu::class.java))
                 }
                 //to main activity
-                R.id.NB_menu -> {
-                    val intent = Intent(this, act_menu::class.java)
-                    startActivity(intent)
+                R.id.home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
             }
             true
